@@ -68,6 +68,10 @@ Article [3] (French) : Marie Guyomard, Susana Barbosa, Lionel Fillatre, R ́egre
 
 Article [4] (French) : Marie Guyomard, Susana Barbosa, Lionel Fillatre, Approximation d’un Réseau de Neurones ReLU interprétable par une Régression Logistique à Noyau, Journées de la Statistique (JDS), 2023.
 
+## Contacts 
+
+Marie Guyomard : guyomard@i3s.unice.fr
+Lionel Fillatre : lionel.fillatre@i3s.unice.fr
 
 ## Acknowledgements 
 The method to visualize the partitionning of the input space is inspired by the work of Randall Balestriero provided here : https://github.com/RandallBalestriero/spline-DN-visualization
