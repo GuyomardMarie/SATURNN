@@ -60,5 +60,6 @@ with $L(\cdot)$ the binary cross-entropy used for binary classification tasks
 $$L\left(\hat{y}, y\right)=-y\log(\hat{y})-(1-y)\log(1-\hat{y}).$$
 
 
+![Schema_SATURNN](https://github.com/GuyomardMarie/SATURNN/assets/93378786/351ad06a-c9cb-4e33-9787-221e620fc15d)
 
 
