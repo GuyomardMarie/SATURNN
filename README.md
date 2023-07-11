@@ -1,23 +1,15 @@
-# SATURNN
+# Splines Approximation Through Understandable ReLU Neural Network (SATURNN)
 
 This repository contains the algorithms for the SATURNN model.
-
-**Please cite our associated papers:**
-
-Article [1] : Marie Guyomard, Susana Barbosa, Lionel Fillatre, Kernel Logistic Regression Approximation of an Understandable ReLU Neural Network, International Conference on Machine Learning (ICML), 2023.
-
-Article [2] : Marie Guyomard, Susana Barbosa, Lionel Fillatre, Understandable ReLU Neural Network for signal classification, International Conference on Acoustics, Speech, and Signal Processing (ICASSP), 2023.
-
-Article [3] (French) : Marie Guyomard, Susana Barbosa, Lionel Fillatre, Approximation d’un Réseau de Neurones ReLU interprétable par une Régression Logistique à Noyau, Journées de la Statistique (JDS), 2023.
 
 **We provide here:**
 - The different classes and functions in order to compute SATURNN : 'SATURNN_functions.ipynb'
 - An example of how to use the SATURNN : 'Main.ipynb'
 
 
-**About the SATURNN:**
+## SATURNN
 
-**Modeling**
+### Modeling
 
 The SATURNN is a 1-Layer Neural Network for classification:
 $$\Phi^\text{SATURNN}(x,\theta) = \sigma(\psi(x, \theta)),$$
@@ -34,10 +26,7 @@ For the neuron $k$, we have:
 - $s_k = \{-1,1\}$ indicates if the non-linear effect will be created on the left or on the right of the treshold $b_k$
 - $\beta_k$ indicates the impact of the non-linear effect on the estimated probability
 
-
-
-**Initialization Process**
-
+### Initialization Process
 
 For all $k \in \{1, \dots, p\}$:
 - Fixed Parameters after initialization
@@ -47,10 +36,7 @@ For all $k \in \{1, \dots, p\}$:
     - $b_k \sim \mathcal{U}[-r, r]$
     - $\beta_k \sim \mathcal{N}(0,1)$
     
-    
-    
-    
-**Learning of the SATURNN**
+### Learning of the SATURNN
 
 Learning SATURNN requires to minimize the following cost function:
 $$\mathcal{L}^{\text{SATURNN}}(\theta)= \frac{1}{N} \sum_{i=1}^N L\left(\sigma(\psi(x^{(i)}, \theta)), y^{(i)}\right),$$
@@ -63,3 +49,25 @@ $$L\left(\hat{y}, y\right)=-y\log(\hat{y})-(1-y)\log(1-\hat{y}).$$
 ![Schema_SATURNN](https://github.com/GuyomardMarie/SATURNN/assets/93378786/351ad06a-c9cb-4e33-9787-221e620fc15d)
 
 
+## Approximation by a Logistic Regression
+
+To come...
+
+## Approximation by a Kernel Logistic Regression
+
+To come...
+
+
+## References
+
+Article [1] : Marie Guyomard, Susana Barbosa, Lionel Fillatre, Kernel Logistic Regression Approximation of an Understandable ReLU Neural Network, International Conference on Machine Learning (ICML), 2023.
+
+Article [2] : Marie Guyomard, Susana Barbosa, Lionel Fillatre, Understandable ReLU Neural Network for signal classification, International Conference on Acoustics, Speech, and Signal Processing (ICASSP), 2023.
+
+Article [3] (French) : Marie Guyomard, Susana Barbosa, Lionel Fillatre, R ́egression Logistique à Noyau équivalente à un Réseau de Neurones Interprétable, Groupe de Recherche et d’Etudes de Traitement du Signal et des Images (Gretsi), 2023.
+
+Article [4] (French) : Marie Guyomard, Susana Barbosa, Lionel Fillatre, Approximation d’un Réseau de Neurones ReLU interprétable par une Régression Logistique à Noyau, Journées de la Statistique (JDS), 2023.
+
+
+## Acknowledgements 
+The method to visualize the partitionning of the input space is inspired by the work of Randall Balestriero provided here : https://github.com/RandallBalestriero/spline-DN-visualization
