@@ -71,6 +71,7 @@ Article [4] (French) : Marie Guyomard, Susana Barbosa, Lionel Fillatre, Approxim
 ## Contacts 
 
 Marie Guyomard : guyomard@i3s.unice.fr
+
 Lionel Fillatre : lionel.fillatre@i3s.unice.fr
 
 ## Acknowledgements 
