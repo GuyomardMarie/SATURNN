@@ -3,8 +3,10 @@
 This repository contains the algorithms for the SATURNN model.
 
 **We provide here:**
-- The different classes and functions in order to compute SATURNN : 'SATURNN_functions.ipynb'
-- An example of how to use the SATURNN : 'Main.ipynb'
+- 'SATURNN_functions.ipynb': The different classes and functions in order to compute
+    - SATURNN
+    - Approximation by a Logistic Regression
+- 'Main.ipynb':  An example of how to use the SATURNN 
 
 
 ## SATURNN
@@ -51,11 +53,32 @@ $$L\left(\hat{y}, y\right)=-y\log(\hat{y})-(1-y)\log(1-\hat{y}).$$
 
 ## Approximation by a Logistic Regression
 
-To come...
+When the number $p$ of neurons composing the SATURNN is large enough, the SATURNN can be well approximated by:
+
+$$\delta^\text{LR PSI LIN}(x, \eta) = g_0(x)^T\eta,$$
+
+A Logistic Regression applied to the features pre-processed by the non-linear transformation $g_0(x) = \nabla_\theta \psi(x,\theta^{(0)})$ that is the gradient of the score function of the SATURNN $\psi(x,\theta)$ with respect to its parameters $\theta$ taken at the point $\theta^{(0)}$.
+
+**Learning the LR PSI LIN**
+
+Learning the LR PSI LIN requires to minimize the following cost function:
+$$\mathcal{L}^{\text{LR PSI LIN}}(\theta)= \frac{1}{N} \sum_{i=1}^N L\left(\sigma(g_0(x^{(i)}, \eta)), y^{(i)}\right),$$
+such that
+$$\hat{\eta}^{\text{LR PSI LIN}} = \arg\min_{\eta \in \mathcal{B}_2^{2p+1}(\theta^{(0)}, R)}   \mathcal{L}^{\text{LR PSI LIN}}(\eta),$$
+with $L(\cdot)$ the binary cross-entropy used for binary classification tasks.
+
+**Equivalence with the SATURNN**
+
+As establihed in Theorem 3.6 in [ICML, 2023]:
+
+Let $\theta^{(0)} = [\beta_0^{(0)},\ldots,\beta_p^{(0)}, b_1^{(0)},\ldots,b_p^{(0)}]$ and $r, R>0$ such that $\beta_k^{(0)} \sim \mathcal{N}(0,1)$ and $b_k^{(0)} \sim \mathcal{U}[-r, +r]$. 
+Then, we get
+$$\sup_{\substack{\theta \in \mathcal{B}_2^{2p+1}(\theta^{(0)},R)\\ \eta \in \mathcal{B}_2^{2p+1}(0,R)}} \left|\mathcal{L}^\text{SATURNN}(\theta) - \mathcal{L}^{\text{LR}}(\eta) \right| \leq \frac{R^2}{2 \sqrt{p}}.$$
+
 
 ## Approximation by a Kernel Logistic Regression
 
-To come...
+Coming Soon...
 
 
 ## References
